@@ -10,7 +10,9 @@ Meteor.publish('pages', function() {
 
 // grab file contents and put them in the pages collection
 pages.remove({});
-var pageList = fs.readdirSync('.');
+var pageList = fs.readdirSync('./pages');
 for (var i = 0; i < pageList.length; i += 1) {
-    console.log(pageList[i]);
+    var fileName = pageList[i];
+    var contents = fs.readFileSync('./pages/' + fileName).toString();
+    pages.insert({title: fileName, html: contents});
 }
