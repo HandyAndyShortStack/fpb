@@ -24,11 +24,14 @@ var topbar = $('#topbar');
 var sidebar = $('#sidebar');
 var logo = $('#logo-link');
 var sidebar_links = $('.sidebar-link');
+title_letters = $('.title-letter');
 
 // setup
 sidebar.css('height', document.height);
-logo.attr('height', sidebar.width());
-logo.attr('width', sidebar.width());
+logo.attr('height', (9 / 10) * sidebar.width());
+logo.attr('width', (9 / 10) * sidebar.width());
+logo.css('margin-left', (1 / 21) * sidebar.width());
+logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
 
 // fancy colors for the links
@@ -62,14 +65,22 @@ content_links.on('mouseout', function() {
 logo.on('mouseover', function() {
     var color = getRandomColor();
     logo.attr('src', 'logo_' + color + '.png');
-    topbar.css('color', color);
+    title_letters.css('color', color);
     sidebar_links.css('color', color);
 });
 logo.on('mouseout', function() {
     var color = getRandomColor();
     logo.attr('src', 'logo_white.png');
-    topbar.css('color', 'white');
+    title_letters.css('color', 'white');
     sidebar_links.css('color', 'white');
+});
+topbar.on('mouseover', function() {
+    for (var i = 0; i < title_letters.length; i += 1) {
+        $(title_letters[i]).css('color', getRandomColor());
+    }
+});
+topbar.on('mouseout', function() {
+    title_letters.css('color', 'white');
 });
 
 ///

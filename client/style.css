@@ -2,6 +2,13 @@
 
 #topbar { background-color: #42373C; color: white; }
 
+#page-title { margin-left: 22px; }
+
+.content { 
+    margin-left: 0px; margin-top: 22px; margin-right: 22px;
+    font-family: "impact"; font-size: 18px;
+}
+
 .sidebar-link { text-align: center; }
 
 body {
