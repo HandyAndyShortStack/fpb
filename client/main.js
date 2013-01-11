@@ -10,6 +10,9 @@ var observer = cursor.observe({
     added: function(page) {
         $('#' + page.title).html(page.html);
         $('#' + page.title + '-link').on('click', function() {
+            $('.selected').css('color', 'white');
+            $('.selected').removeClass('selected');
+            $(this).addClass('selected');
             content_pages.hide();
             $('#' + page.title).show();
             sidebar.css('height', document.height);
@@ -30,7 +33,6 @@ title_letters = $('.title-letter');
 sidebar.css('height', document.height);
 logo.attr('height', (9 / 10) * sidebar.width());
 logo.attr('width', (9 / 10) * sidebar.width());
-logo.css('margin-left', (1 / 21) * sidebar.width());
 logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
 
@@ -58,9 +60,11 @@ content_links.on('mouseover', function() {
     logo.attr('src', 'logo_' + color + '.png');
 });
 content_links.on('mouseout', function() {
+    var color = $('.selected').css('color');
     var self = $('#' + this.id);
     self.css('color', 'white');
     logo.attr('src', 'logo_white.png');
+    $('.selected').css('color', color);
 });
 logo.on('mouseover', function() {
     var color = getRandomColor();
@@ -69,10 +73,11 @@ logo.on('mouseover', function() {
     sidebar_links.css('color', color);
 });
 logo.on('mouseout', function() {
-    var color = getRandomColor();
+    var color = $('.selected').css('color');
     logo.attr('src', 'logo_white.png');
     title_letters.css('color', 'white');
     sidebar_links.css('color', 'white');
+    $('.selected').css('color', color);
 });
 topbar.on('mouseover', function() {
     for (var i = 0; i < title_letters.length; i += 1) {
