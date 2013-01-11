@@ -3,3 +3,16 @@
 #topbar { background-color: #42373C; color: white; }
 
 .sidebar-link { text-align: center; }
+
+body {
+background-image: -ms-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -moz-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -o-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ADA78F), color-stop(1, #FFFFFF));
+background-image: -webkit-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: linear-gradient(to top, #ADA78F 0%, #FFFFFF 100%);
+}
+
+html {
+   min-height: 100%;
+}
