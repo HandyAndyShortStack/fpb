@@ -27,7 +27,8 @@ var topbar = $('#topbar');
 var sidebar = $('#sidebar');
 var logo = $('#logo-link');
 var sidebar_links = $('.sidebar-link');
-title_letters = $('.title-letter');
+var title_letters = $('.title-letter');
+var shirt = $('#shirt');
 
 // setup
 sidebar.css('height', document.height);
@@ -35,6 +36,17 @@ logo.attr('height', (9 / 10) * sidebar.width());
 logo.attr('width', (9 / 10) * sidebar.width());
 logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
+$('#front').show();
+
+// front page navigation
+function showFront() {
+    content_pages.hide();
+    $('#front').show();
+    $('.selected').css('color', 'white');
+    $('.selected').removeClass('selected');
+}
+topbar.on('click', showFront);
+logo.on('click', showFront);
 
 // fancy colors for the links
 function getRandomColor() {
@@ -58,6 +70,7 @@ content_links.on('mouseover', function() {
     var color = getRandomColor();
     self.css('color', color);
     logo.attr('src', 'logo_' + color + '.png');
+    shirt.attr('src', 'shirt_' + color + '.png');
 });
 content_links.on('mouseout', function() {
     var color = $('.selected').css('color');
@@ -65,12 +78,14 @@ content_links.on('mouseout', function() {
     self.css('color', 'white');
     logo.attr('src', 'logo_white.png');
     $('.selected').css('color', color);
+    shirt.attr('src', 'shirt_white.png');
 });
 logo.on('mouseover', function() {
     var color = getRandomColor();
     logo.attr('src', 'logo_' + color + '.png');
     title_letters.css('color', color);
     sidebar_links.css('color', color);
+    shirt.attr('src', 'shirt_' + color + '.png');
 });
 logo.on('mouseout', function() {
     var color = $('.selected').css('color');
@@ -78,14 +93,26 @@ logo.on('mouseout', function() {
     title_letters.css('color', 'white');
     sidebar_links.css('color', 'white');
     $('.selected').css('color', color);
+    shirt.attr('src', 'shirt_white.png');
 });
 topbar.on('mouseover', function() {
     for (var i = 0; i < title_letters.length; i += 1) {
         $(title_letters[i]).css('color', getRandomColor());
     }
+    shirt.attr('src', 'shirt_' + getRandomColor() + '.png');
 });
 topbar.on('mouseout', function() {
     title_letters.css('color', 'white');
+    shirt.attr('src', 'shirt_white.png');
+});
+shirt.on('mouseover', function() {
+    var color = getRandomColor();
+    shirt.attr('src', 'shirt_' + color + '.png');
+    logo.attr('src', 'logo_' + color + '.png');
+});
+shirt.on('mouseout', function() {
+    shirt.attr('src', 'shirt_white.png');
+    logo.attr('src', 'logo_white.png');
 });
 
 ///
