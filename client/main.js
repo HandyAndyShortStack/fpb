@@ -99,11 +99,9 @@ topbar.on('mouseover', function() {
     for (var i = 0; i < title_letters.length; i += 1) {
         $(title_letters[i]).css('color', getRandomColor());
     }
-    shirt.attr('src', 'shirt_' + getRandomColor() + '.png');
 });
 topbar.on('mouseout', function() {
     title_letters.css('color', 'white');
-    shirt.attr('src', 'shirt_white.png');
 });
 shirt.on('mouseover', function() {
     var color = getRandomColor();
