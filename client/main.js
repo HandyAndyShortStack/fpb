@@ -1,25 +1,6 @@
 Meteor.startup(function() {
 ///////////////////////////
 
-pages = new Meteor.Collection('pages');
-Meteor.subscribe('pages');
-
-// load content and register click handlers to the links
-var cursor = pages.find();
-var observer = cursor.observe({
-    added: function(page) {
-        $('#' + page.title).html(page.html);
-        $('#' + page.title + '-link').on('click', function() {
-            $('.selected').css('color', 'white');
-            $('.selected').removeClass('selected');
-            $(this).addClass('selected');
-            content_pages.hide();
-            $('#' + page.title).show();
-            sidebar.css('height', document.height);
-        });
-    }
-});
-
 // handles
 var content_links = $('.sidebar-link');
 var content_pages = $('.content');
@@ -29,6 +10,7 @@ var logo = $('#logo-link');
 var sidebar_links = $('.sidebar-link');
 var title_letters = $('.title-letter');
 var shirt = $('#shirt');
+var random_color = 'white';
 
 // setup
 sidebar.css('height', document.height);
@@ -38,15 +20,36 @@ logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
 $('#front').show();
 
+// content injection
+for (var i = 0; i < sidebar_links.length; i += 1) {
+    var link = sidebar_links[i];
+    var target_id = link.id.slice(0, -5);
+    var content = Template[target_id]();
+    $('#' + target_id).html(content);
+    $(link).on('click', function() {
+        $('.selected').css('color', 'white');
+        $('.selected').removeClass('selected');
+        $(this).addClass('selected');
+        $('.selected').css('color', random_color);
+        content_pages.hide();
+        console.log(this.id);
+        $('#' + this.id.slice(0, -5)).show();
+        sidebar.css('height', document.height);
+    });
+}
+
 // front page navigation
-function showFront() {
+topbar.on('click', function() {
     content_pages.hide();
     $('#front').show();
     $('.selected').css('color', 'white');
     $('.selected').removeClass('selected');
-}
-topbar.on('click', showFront);
-logo.on('click', showFront);
+});
+logo.on('click', function() {
+    content_pages.hide();
+    $('#front').show();
+    $('.selected').removeClass('selected');
+});
 
 // fancy colors for the links
 function getRandomColor() {
@@ -67,32 +70,32 @@ function getRandomColor() {
 }
 content_links.on('mouseover', function() {
     var self = $('#' + this.id);
-    var color = getRandomColor();
-    self.css('color', color);
-    logo.attr('src', 'logo_' + color + '.png');
-    shirt.attr('src', 'shirt_' + color + '.png');
+    random_color = getRandomColor();
+    self.css('color', random_color);
+    logo.attr('src', 'logo_' + random_color + '.png');
+    shirt.attr('src', 'shirt_' + random_color + '.png');
 });
 content_links.on('mouseout', function() {
-    var color = $('.selected').css('color');
+    random_color = $('.selected').css('color');
     var self = $('#' + this.id);
     self.css('color', 'white');
     logo.attr('src', 'logo_white.png');
-    $('.selected').css('color', color);
+    $('.selected').css('color', random_color);
     shirt.attr('src', 'shirt_white.png');
 });
 logo.on('mouseover', function() {
-    var color = getRandomColor();
-    logo.attr('src', 'logo_' + color + '.png');
-    title_letters.css('color', color);
-    sidebar_links.css('color', color);
-    shirt.attr('src', 'shirt_' + color + '.png');
+    random_color = getRandomColor();
+    logo.attr('src', 'logo_' + random_color + '.png');
+    title_letters.css('color', random_color);
+    sidebar_links.css('color', random_color);
+    shirt.attr('src', 'shirt_' + random_color + '.png');
 });
 logo.on('mouseout', function() {
-    var color = $('.selected').css('color');
+    random_color = $('.selected').css('color');
     logo.attr('src', 'logo_white.png');
     title_letters.css('color', 'white');
     sidebar_links.css('color', 'white');
-    $('.selected').css('color', color);
+    $('.selected').css('color', random_color);
     shirt.attr('src', 'shirt_white.png');
 });
 topbar.on('mouseover', function() {
@@ -104,9 +107,9 @@ topbar.on('mouseout', function() {
     title_letters.css('color', 'white');
 });
 shirt.on('mouseover', function() {
-    var color = getRandomColor();
-    shirt.attr('src', 'shirt_' + color + '.png');
-    logo.attr('src', 'logo_' + color + '.png');
+    random_color = getRandomColor();
+    shirt.attr('src', 'shirt_' + random_color + '.png');
+    logo.attr('src', 'logo_' + random_color + '.png');
 });
 shirt.on('mouseout', function() {
     shirt.attr('src', 'shirt_white.png');
