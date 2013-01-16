@@ -11,6 +11,7 @@ var sidebar_links = $('.sidebar-link');
 var title_letters = $('.title-letter');
 var shirt = $('#shirt');
 var random_color = 'white';
+var front_page = $('#front');
 
 // setup
 sidebar.css('height', document.height);
@@ -18,36 +19,37 @@ logo.attr('height', (9 / 10) * sidebar.width());
 logo.attr('width', (9 / 10) * sidebar.width());
 logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
-$('#front').show();
+front_page.show();
 
 // content injection
-for (var i = 0; i < sidebar_links.length; i += 1) {
-    var link = sidebar_links[i];
-    var target_id = link.id.slice(0, -5);
-    var content = Template[target_id]();
-    $('#' + target_id).html(content);
-    $(link).on('click', function() {
-        $('.selected').css('color', 'white');
-        $('.selected').removeClass('selected');
-        $(this).addClass('selected');
-        $('.selected').css('color', random_color);
-        content_pages.hide();
-        console.log(this.id);
-        $('#' + this.id.slice(0, -5)).show();
-        sidebar.css('height', document.height);
-    });
+
+for (var i = 0; i < content_pages.length; i += 1) {
+    page = content_pages[i];
+    $(page).html(Template[page.id]());
 }
+
+// content navigation
+content_links.on('click', function() {
+    front_page.hide();
+    $('.selected').css('color', 'white');
+    $('.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $('.selected').css('color', random_color);
+    content_pages.hide();
+    $('#' + this.id.slice(0, -5)).show();
+    sidebar.css('height', document.height);
+});
 
 // front page navigation
 topbar.on('click', function() {
     content_pages.hide();
-    $('#front').show();
+    front_page.show();
     $('.selected').css('color', 'white');
     $('.selected').removeClass('selected');
 });
 logo.on('click', function() {
     content_pages.hide();
-    $('#front').show();
+    front_page.show();
     $('.selected').removeClass('selected');
 });
 
