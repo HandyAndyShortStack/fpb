@@ -22,7 +22,6 @@ content_pages.hide();
 front_page.show();
 
 // content injection
-
 for (var i = 0; i < content_pages.length; i += 1) {
     page = content_pages[i];
     $(page).html(Template[page.id]());
@@ -67,7 +66,7 @@ function getRandomColor() {
     } else if (coin < (5 / 6)) {
         return 'deepskyblue';
     } else {
-        return 'orange'
+        return 'orange';
     }
 }
 content_links.on('mouseover', function() {
