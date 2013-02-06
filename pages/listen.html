@@ -6,7 +6,7 @@
 
 <div class="span2">
 &nbsp;
-<a href="https://soundcloud.com/thefabulouspartyboys"><img src="soundcloud_badge.png" onclick="window.location='https://soundcloud.com/thefabulouspartyboys';"/></a>
+<img src="soundcloud_badge.png" onclick="soundcloudPop();"/>
 </div>
 
 <div class="span2">
@@ -19,5 +19,14 @@
 </div>
 
 </div>
+
+<script>
+function soundcloudPop() {
+    var url = "http://soundcloud.com/thefabulouspartyboys";
+	var newWindow=window.open(url);
+	if (window.focus) {newWindow.focus()}
+	return false;
+}
+</script>
 
 </template>
