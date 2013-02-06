@@ -12,6 +12,8 @@ var title_letters = $('.title-letter');
 var shirt = $('#shirt');
 var random_color = 'white';
 var front_page = $('#front');
+var listen_link = $('#listen-link');
+var listen = $('#listen');
 
 // setup
 sidebar.css('height', document.height);
@@ -19,6 +21,7 @@ logo.attr('height', (9 / 10) * sidebar.width());
 logo.attr('width', (9 / 10) * sidebar.width());
 logo.css('margin-top', (1 / 20) * sidebar.width());
 content_pages.hide();
+listen.hide();
 front_page.show();
 
 // content injection
@@ -26,6 +29,7 @@ for (var i = 0; i < content_pages.length; i += 1) {
     page = content_pages[i];
     $(page).html(Template[page.id]());
 }
+$('#listen').html(Template.listen());
 
 // content navigation
 content_links.on('click', function() {
@@ -34,9 +38,18 @@ content_links.on('click', function() {
     $('.selected').removeClass('selected');
     $(this).addClass('selected');
     $('.selected').css('color', random_color);
-    content_pages.hide();
-    $('#' + this.id.slice(0, -5)).show();
     sidebar.css('height', document.height);
+    if (this.id !== 'listen-link') {
+        content_pages.hide();
+    }
+    if ($(this).hasClass('expanded')) {
+        $(this).removeClass('expanded');
+        listen.hide();
+        return;
+    } else if (this.id === 'listen-link') {
+        $(this).addClass('expanded');
+    }
+    $('#' + this.id.slice(0, -5)).show();
 });
 
 // front page navigation

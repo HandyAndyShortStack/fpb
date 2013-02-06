@@ -18,6 +18,8 @@
     font-family: "verdana"; font-size: 19px;
 }
 
+.expanded { letter-spacing: 10px; }
+
 body {
 background-image: -ms-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
 background-image: -moz-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
