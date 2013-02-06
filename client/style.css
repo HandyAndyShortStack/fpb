@@ -20,6 +20,8 @@
 
 .expanded { letter-spacing: 10px; }
 
+.link { cursor: pointer; }
+
 body {
 background-image: -ms-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
 background-image: -moz-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
