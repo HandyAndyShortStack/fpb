@@ -4,7 +4,12 @@
 <p>@ the <span class="link" onclick="sunsetPop();">Sunset Lounge</span></p>
 <p onclick="ballardPop();">Ballard, WA</p>
 <p>w/ <span class="link" onclick="linkTo('http://feverton.com/');">Feverton</span> and <span class="link" onclick="linkTo('http://www.radioraheemband.com/');">Radio Raheem</p>
-<p onclick="linkTo('http://rt.com/news/russia-children-drink-alcohol/');">21+</p>
+<p onclick="linkTo('http://www.pvamu.edu/pages/2315.asp');">21+</p>
+
+<br />
+
+<h3>April 19th/20th</h3>
+<p class="link" onclick="linkTo('http://www.worthyfest.com/');">Worthy Fest</p>
 
 <br />
 
@@ -17,7 +22,7 @@
 function linkTo(url) {
 	var newTab = window.open(url);
 	if (window.focus) {
-	    newTab.focus()
+	    newTab.focus();
 	}
 	return false;
 }
@@ -26,14 +31,14 @@ function linkTo(url) {
 function sunsetPop() {
     var url = 'https://maps.google.com/maps?q=5433+Ballard+Avenue+Northwest+Seattle,+WA+98107&ll=47.66792,-122.384874&spn=0.003157,0.005284&hnear=5433+Ballard+Ave+NW,+Seattle,+King,+Washington+98107&t=h&z=18';
 	var newWindow=window.open(url);
-	if (window.focus) {newWindow.focus()}
+	if (window.focus) {newWindow.focus();}
 	return false;
 }
 
 function ballardPop() {
     var url = "http://jonesxml.com/images/trondheim3.jpg";
 	var newWindow=window.open(url,'name','height=359,width=538');
-	if (window.focus) {newWindow.focus()}
+	if (window.focus) {newWindow.focus();}
 	return false;
 }
 
