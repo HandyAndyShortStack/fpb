@@ -31,6 +31,10 @@ background-image: -webkit-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
 background-image: linear-gradient(to top, #ADA78F 0%, #FFFFFF 100%);
 }
 
-html {
+html, body {
    min-height: 100%;
+}
+
+#sidebar-wrapper, #sidebar {
+	height: 100%;
 }
