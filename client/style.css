@@ -3,6 +3,10 @@
     letter-spacing: 2px; text-align: center;
 }
 
+.sidebar-link, .link, .title-letter { cursor: pointer; }
+
+.link:hover { color: deepskyblue; text-decoration: underline; }
+
 #topbar { background-color: #42373C; color: white; }
 
 #page-title { margin-left: 22px; }
@@ -19,8 +23,6 @@
 }
 
 .expanded { letter-spacing: 10px; }
-
-.link { cursor: pointer; }
 
 body {
 background-image: -ms-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
