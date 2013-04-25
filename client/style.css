@@ -17,6 +17,11 @@
 
 #listen { background-color: #42373C; }
 
+.video-wrapper { 
+	background-color: #42373C;
+	padding-left: 30px;
+}
+
 .content { 
     margin-left: 0px; margin-top: 25px; margin-right: 22px; margin-bottom: 25px;
     font-family: "verdana"; font-size: 19px;
