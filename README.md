@@ -1,7 +1,7 @@
 FPB
 ===
 
-Website for the Fabulous Partyboys
+Website for the Fabulous Party Boys
 http://thefabulouspartyboys.com
 
 Javascript is funky!!!
