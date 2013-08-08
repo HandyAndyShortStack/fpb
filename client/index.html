@@ -6,15 +6,18 @@
 
 <body>
 
-<div class="row" style="position: fixed">
+<div class="row" id="sidebar-wrapper" style="position: fixed">
     <div id="sidebar" class="span2">
         <img id="logo-link" class="link" src="logo_white.png" />
-        <h3 id="listen-link" class="sidebar-link link">LISTEN</h3>
-        <h3 id="shows-link" class="sidebar-link link">SHOWS</h3>
-        <h3 id="photos-link" class="sidebar-link link">PHOTOS</h3>
-        <h3 id="about-link" class="sidebar-link link">ABOUT</h3>
-        <h3 id="press-link" class="sidebar-link link">PRESS</h3>
-        <h3 id="contact-link" class="sidebar-link link">CONTACT</h3>
+        <h3 id="listen-link" class="sidebar-link">LISTEN</h3>
+        <h3 id="shows-link" class="sidebar-link">SHOWS</h3>
+        <h3 id="video-link" class="sidebar-link">VIDEO</h3>
+        <h3 id="photos-link" class="sidebar-link">PHOTOS</h3>
+        <h3 id="about-link" class="sidebar-link">ABOUT</h3>
+        <h3 id="press-link" class="sidebar-link">PRESS</h3>
+        <h3 id="contact-link" class="sidebar-link">CONTACT</h3>
+        <h4 class="link" onclick="linkTo('https://www.facebook.com/thefabulouspartyboys');">facebook</h4>
+        <h4 class="link" onclick="linkTo('https://twitter.com/thefabpartyboys');">twitter</h4>
     </div>
 </div>
 
@@ -22,7 +25,7 @@
     <div class="span2">
     </div>
     <div class="span10">
-        <div id="topbar" class="row link">
+        <div id="topbar" class="row">
             <h2 id="page-title">
                 <span class= "title-letter">T</span>
                 <span class= "title-letter">H</span>
@@ -49,6 +52,7 @@
         <div id="listen" class="row"></div>
         <div id="shows" class="row content"></div>
         <div id="photos" class="row content"></div>
+        <div id="video" class="row content"></div>
         <div id="about" class="row content"></div>
         <div id="press" class="row content"></div>
         <div id="contact" class="row content"></div>
@@ -59,5 +63,16 @@
         </div>
     </div>
 </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41954278-1', 'thefabulouspartyboys.com');
+  ga('send', 'pageview');
+
+</script>
 
 </body>

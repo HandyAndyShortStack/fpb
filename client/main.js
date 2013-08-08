@@ -16,7 +16,6 @@ var listen_link = $('#listen-link');
 var listen = $('#listen');
 
 // setup
-sidebar.css('height', document.height);
 logo.attr('height', (9 / 10) * sidebar.width());
 logo.attr('width', (9 / 10) * sidebar.width());
 logo.css('margin-top', (1 / 20) * sidebar.width());
