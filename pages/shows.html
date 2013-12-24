@@ -1,6 +1,22 @@
 <template name="shows">
 
-<h3>More dates to be announced soon.</h3>
+<h3>Monday December 30th</h3>
+<p>Snowflake Ball</p>
+<p>Bellingham, WA</p>
+
+<h3>Friday January 17th</h3>
+<p class="link show-link" data-href="http://www.nectarlounge.com/">Nectar</p>
+<p>Seattle, WA</p>
+<p>8:00pm</p>
+<p>w/ <span class="link show-link" data-href="http://www.theoreticsmusic.com/">Theoretics</span>, <span class="link show-link" data-href="http://thequickandeasyboys.com/">the Quick &amp; easy Boys</span>, and <span class="link show-link" data-href="http://www.spynreset.com/SpynReset/SpynReset/Home.html">Spyn Reset</span></p>
+<p>$7 adv, $10 door</p>
+
+<h3>Friday January 24th</h3>
+<p class="link show-link" data-href="http://holdmyticket.com/event/159081">The Wild Buffalo</p>
+<p>Bellingham, WA</p>
+<p>9:30pm</p>
+<p>Bring your axe!</p>
+<p>Free</p>
 
 <script>
 
@@ -11,6 +27,12 @@ function linkTo(url) {
 	}
 	return false;
 }
+
+$(function() {
+  $('.show-link').on('click', function() {
+    linkTo($(this).data('href'));
+  });
+});
 
 </script>
 
