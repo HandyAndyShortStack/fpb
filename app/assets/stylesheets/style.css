@@ -1,0 +1,51 @@
+#sidebar { 
+    background-color: #42373C; color: white; 
+    letter-spacing: 2px; text-align: center;
+}
+
+.sidebar-link, .link, .title-letter { cursor: pointer; }
+
+.sidebar-link:hover {
+  text-decoration: none;
+}
+
+.link:hover { color: deepskyblue; text-decoration: underline; }
+
+#topbar { background-color: #42373C; color: white; }
+
+#page-title { margin-left: 22px; }
+
+#front {
+    margin-left: 0px; margin-top: 25px; margin-right: 22px; margin-bottom: 25px;
+}
+
+#listen { background-color: #42373C; }
+
+.video-wrapper { 
+	background-color: #42373C;
+	padding-left: 30px;
+}
+
+.content { 
+    margin-left: 0px; margin-top: 25px; margin-right: 22px; margin-bottom: 25px;
+    font-family: "verdana"; font-size: 19px;
+}
+
+.expanded { letter-spacing: 10px; }
+
+body {
+background-image: -ms-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -moz-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -o-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ADA78F), color-stop(1, #FFFFFF));
+background-image: -webkit-linear-gradient(bottom, #ADA78F 0%, #FFFFFF 100%);
+background-image: linear-gradient(to top, #ADA78F 0%, #FFFFFF 100%);
+}
+
+html, body {
+   min-height: 100%;
+}
+
+#sidebar-wrapper, #sidebar {
+	height: 100%;
+}

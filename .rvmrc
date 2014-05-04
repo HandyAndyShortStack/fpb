@@ -1,0 +1,3 @@
+rvm use 2.0.0@fpb --create
+
+cowsay 'ooh aint that funky now'
