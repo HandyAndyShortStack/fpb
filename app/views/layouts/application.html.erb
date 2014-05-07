@@ -5,6 +5,8 @@
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 
+<%= render partial: "application/songs", locals: { songs: Song.all } %>
+
 </head>
 
 <body>
@@ -12,7 +14,7 @@
 <div class="row" id="sidebar-wrapper" style="position: fixed">
   <div id="sidebar" class="span2">
     <img id="logo-link" class="link" src="logo_white.png" />
-    <%= link_to "/listen" do %>
+    <%= link_to "#", data: { no_turbolink: true } do %>
       <h3 id="listen-link" class="sidebar-link">LISTEN</h3>
     <% end %>
     <%= link_to "/shows" do %>
@@ -72,11 +74,11 @@
         </h2>
       <% end %>
     </div>
+    <%= render partial: "application/listen" %>
     <div class="span10 content">
 
       <%= render partial: "application/about" %>
       <%= render partial: "application/contact" %>
-      <%= render partial: "application/listen" %>
       <%= render partial: "application/photos" %>
       <%= render partial: "application/press" %>
       <%= render partial: "application/shows" %>

@@ -1,0 +1,3 @@
+<% songs.each do |song| %>
+  <%= audio_tag song.url, class: "song", id: "song-#{song.id}" %>
+<% end %>
