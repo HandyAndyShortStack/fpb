@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'therubyracer', platform: :ruby
 gem 'less-rails'
 gem 'jquery-turbolinks'
-gem 'pry-rail'
+gem 'pry-rails'
 
 gem 'twitter-bootstrap-rails'
 
