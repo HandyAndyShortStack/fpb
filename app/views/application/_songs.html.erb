@@ -1,3 +1,6 @@
 <% songs.each do |song| %>
-  <%= audio_tag song.url, class: "song", id: "song-#{song.id}" %>
+  <audio id= "song-<%= song.id %>" class="song", data-title="<%= song.title %>">
+    <source type="audio/mp3" src="/assets/<%= song.url %>.mp3" />
+    <source type="audio/ogg" src="/assets/<%= song.url %>.ogg" />
+  </audio>
 <% end %>

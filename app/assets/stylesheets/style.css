@@ -52,3 +52,12 @@ html, body {
 #sidebar-wrapper, #sidebar {
 	height: 100%;
 }
+
+#audio-controls {
+  color: white;
+}
+
+#listen {
+  text-align: center;
+  padding-bottom: 16px;
+}

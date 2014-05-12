@@ -15,5 +15,7 @@ window.FPB = {
     } else {
       return 'orange';
     }
-  }
+  },
+
+  events: $('<div></div>')
 };
