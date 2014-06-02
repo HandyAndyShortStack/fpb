@@ -2,7 +2,7 @@
 
 <title>The Fabulous Party Boys</title>
 <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
 
 </head>
@@ -11,32 +11,34 @@
 
 <div class="row" id="sidebar-wrapper" style="position: fixed">
   <div id="sidebar" class="span2">
-    <img id="logo-link" class="link" src="logo_white.png" />
-    <%= link_to "/listen" do %>
+    <%= link_to root_path, data: {push: true} do %>
+      <img id="logo-link" class="link" src="logo_white.png" />
+    <% end %>
+    <%= link_to "listen" do %>
       <h3 id="listen-link" class="sidebar-link">LISTEN</h3>
     <% end %>
-    <%= link_to "/shows" do %>
+    <%= link_to "/shows", data: {push: true} do %>
       <h3 id="shows-link" class="sidebar-link">SHOWS</h3>
     <% end %>
-    <%= link_to "/video" do %>
+    <%= link_to "/video", data: {push: true} do %>
       <h3 id="video-link" class="sidebar-link">VIDEO</h3>
     <% end %>
-    <%= link_to "/photos" do %>
+    <%= link_to "/photos", data: {push: true} do %>
       <h3 id="photos-link" class="sidebar-link">PHOTOS</h3>
     <% end %>
-    <%= link_to "/about" do %>
+    <%= link_to "/about", data: {push: true} do %>
       <h3 id="about-link" class="sidebar-link">ABOUT</h3>
     <% end %>
-    <%= link_to "/press" do %>
+    <%= link_to "/press", data: {push: true} do %>
       <h3 id="press-link" class="sidebar-link">PRESS</h3>
     <% end %>
-    <%= link_to "/contact" do %>
+    <%= link_to "/contact", data: {push: true} do %>
       <h3 id="contact-link" class="sidebar-link">CONTACT</h3>
     <% end %>
-    <%= link_to "https://www.facebook.com/thefabulouspartyboys" do %>
+    <%= link_to "https://www.facebook.com/thefabulouspartyboys", data: {push: true} do %>
       <h4 class="link" onclick=>facebook</h4>
     <% end %>
-    <%= link_to "https://twitter.com/thefabpartyboys" do %>
+    <%= link_to "https://twitter.com/thefabpartyboys", data: {push: true} do %>
       <h4 class="link" onclick=>twitter</h4>
     <% end %>
   </div>
@@ -47,7 +49,7 @@
   </div>
   <div class="span10">
     <div id="topbar" class="row">
-      <%= link_to root_path do %>
+      <%= link_to root_path, data: {push: true} do %>
         <h2 id="page-title">
           <span class= "title-letter">T</span>
           <span class= "title-letter">H</span>
@@ -72,30 +74,14 @@
         </h2>
       <% end %>
     </div>
+    <div class="span10">
+      <%= render partial: "listen" %>
+    </div>
     <div class="span10 content">
-
-      <%= render partial: "application/about" %>
-      <%= render partial: "application/contact" %>
-      <%= render partial: "application/listen" %>
-      <%= render partial: "application/photos" %>
-      <%= render partial: "application/press" %>
-      <%= render partial: "application/shows" %>
-      <%= render partial: "application/video" %>
-
       <%= yield %>
-
     </div>
   </div>
 </div>
-
-<script>
-  $(function() {
-    $('.page').hide();
-    <% if @page_name %>
-      $('#<%= @page_name %>').show();
-    <% end %>
-  });
-</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

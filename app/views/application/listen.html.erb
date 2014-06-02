@@ -22,10 +22,25 @@
 
   <script>
   function soundcloudPop() {
-    var url = "http://soundcloud.com/thefabulouspartyboys";
+      var url = "http://soundcloud.com/thefabulouspartyboys";
   	var newWindow=window.open(url);
   	if (window.focus) {newWindow.focus()}
   	return false;
   }
   </script>
 </div>
+
+<% if @page_name == "listen" %>
+  <script>
+    $(function() {
+      console.log('<%= @page_name %>');
+      $('#listen').show();
+    });
+  </script>
+<% else %>
+  <script>
+    $(function() {
+      $('#listen').hide();
+    });
+  </script>
+<% end %>

@@ -47,9 +47,6 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-turbolinks (2.0.2)
-      railties (>= 3.1.0)
-      turbolinks
     json (1.8.1)
     less (2.5.0)
       commonjs (~> 0.2.7)
@@ -121,8 +118,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
-      coffee-rails
     twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
       execjs
@@ -132,6 +127,7 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    wiselinks (1.2.1)
 
 PLATFORMS
   ruby
@@ -140,7 +136,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-  jquery-turbolinks
   less-rails
   pry-rails
   rails (= 4.0.1)
@@ -148,6 +143,6 @@ DEPENDENCIES
   sdoc
   sqlite3
   therubyracer
-  turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
+  wiselinks
