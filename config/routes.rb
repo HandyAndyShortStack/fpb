@@ -1,8 +1,13 @@
 Fpb::Application.routes.draw do
 
-  root to: "application#index"
+  root to: "pages#index"
 
-  ApplicationController.page_names.each do |page_name|
-    get page_name, to: "application##{page_name}", as: page_name
+  PagesController.page_names.each do |page_name|
+    get page_name, to: "pages##{page_name}", as: page_name
   end
+
+  resources :shows
+  resources :sessions, only: [:new, :create]
+  get "admin", to: "sessions#new"
+  match "logout", to: "sessions#destroy", via: [:get, :delete]
 end

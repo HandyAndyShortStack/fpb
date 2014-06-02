@@ -1,0 +1,10 @@
+<%= form_for @show do |f| %>
+  date: <%= f.date_field :date %><br />
+  venue: <%= f.text_field :venue %><br />
+  location: <%= f.text_field :location %><br />
+  other acts: <%= f.text_field :other_acts %><br />
+  time: <%= f.text_field :time %><br />
+  price: <%= f.text_field :price %><br />
+  notes: <%= f.text_field :notes %><br />
+  <%= f.submit %>
+<% end %>
