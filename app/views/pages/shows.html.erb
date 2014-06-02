@@ -1,0 +1,5 @@
+<div id="shows" class="page">
+  <% @shows.each do |show| %>
+    <%= render partial: "shows/show", locals: {show: show} %>
+  <% end %> 
+</div>

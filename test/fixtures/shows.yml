@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-06-01 21:35:33
+
+two:
+  date: 2014-06-01 21:35:33
