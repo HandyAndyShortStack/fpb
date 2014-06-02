@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
   end
 
   def create
-    return render(nothing: true, status: 401) unless admin?[]
+    return render(nothing: true, status: 401) unless admin?
     @show = Show.create(permitted_params)
     redirect_to shows_path
   end
