@@ -41,6 +41,9 @@
     <%= link_to "https://twitter.com/thefabpartyboys", data: {push: true} do %>
       <h4 class="link" onclick=>twitter</h4>
     <% end %>
+    <% if @admin %>
+      <%= link_to "log out", logout_path %>
+    <% end %>
   </div>
 </div>
 

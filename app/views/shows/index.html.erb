@@ -1,4 +1,7 @@
 <div id="shows" class="page">
+  <% if @admin %>
+    <%= link_to "Create New Show", new_show_path %>
+  <% end %>
   <% @shows.each do |show| %>
     <%= render partial: "shows/show", locals: {show: show} %>
   <% end %> 

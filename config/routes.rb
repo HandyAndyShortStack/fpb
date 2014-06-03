@@ -9,5 +9,5 @@ Fpb::Application.routes.draw do
   resources :shows
   resources :sessions, only: [:new, :create]
   get "admin", to: "sessions#new"
-  match "logout", to: "sessions#destroy", via: [:get, :delete]
+  match "logout", to: "sessions#destroy", via: [:get, :delete], as: "logout"
 end

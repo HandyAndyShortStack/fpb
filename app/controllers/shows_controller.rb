@@ -10,6 +10,12 @@ class ShowsController < ApplicationController
     render "edit", layout: "admin"
   end
 
+  def edit
+    return render(nothing: true, status: 401) unless admin?
+    @show = Show.find(params[:id])
+    render layout: "admin"
+  end
+
   def create
     return render(nothing: true, status: 401) unless admin?
     @show = Show.create(permitted_params)
@@ -18,7 +24,6 @@ class ShowsController < ApplicationController
 
   def update
     return render(nothing: true, status: 401) unless admin?
-    allow_attributes
     @show = Show.find(params[:id])
     @show.update_attributes(permitted_params)
     redirect_to shows_path
@@ -35,9 +40,5 @@ private
 
   def permitted_params
     params.require(:show).permit(:date, :venue, :location, :other_acts, :time, :price, :notes)
-  end
-
-  def admin?
-    ENV["FPB_PASSWORD"] && ENV["FPB_PASSWORD"] == session[:password]
   end
 end
