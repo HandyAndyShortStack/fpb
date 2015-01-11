@@ -3,7 +3,7 @@
   <p><%= show.venue %></p>
   <% %w(location other_acts time price notes).map(&:to_sym).each do |sym| %>
     <% if show.send(sym) && !show.send(sym).blank? %>
-      <p><%= show.send sym %></p>
+      <p><%= show.send(sym).html_safe %></p>
     <% end %>
   <% end %>
   <% if @admin %>
